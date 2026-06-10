@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>同济外语楼大冒险</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game-wrapper">
+    <canvas id="game-canvas" width="800" height="600"></canvas>
+
+    <div id="loading-screen">
+        <div>加载中<span class="loading-dots">...</span></div>
+        <div class="loading-sub">同济外语楼大冒险</div>
+    </div>
+
+    <div id="hud">
+        <div id="hud-left">
+            <div id="level-display">Lv.1 新生</div>
+            <div id="exp-bar-container"><div id="exp-bar-fill" style="width:0%"></div></div>
+            <div id="exp-text">EXP: 0</div>
+        </div>
+        <div id="hud-right">
+            <div id="task-title">当前任务</div>
+            <div id="task-text">外语楼正门<br>(0/2)</div>
+            <button id="restart-hud-btn" title="重新开始 (按 R)">↺</button>
+        </div>
+    </div>
+
+    <div id="interact-hint">按 <span>E</span> 与NPC交谈</div>
+
+    <div id="dialogue-overlay">
+        <div id="dialogue-panel">
+            <div id="dialogue-npc-name"></div>
+            <div id="dialogue-text"></div>
+            <div id="dialogue-continue">按 <span>E</span> 继续</div>
+        </div>
+    </div>
+
+    <div id="gate-form-overlay">
+        <div id="gate-form-panel">
+            <div id="gate-form-title">入校登记</div>
+            <div id="gate-form-desc">请登记姓名和学号后入校。</div>
+            <div class="gate-form-field">
+                <label>姓名</label>
+                <input type="text" id="gate-form-name" placeholder="请输入姓名" maxlength="20">
+            </div>
+            <div class="gate-form-field">
+                <label>学号</label>
+                <input type="text" id="gate-form-id" placeholder="请输入学号" maxlength="20">
+            </div>
+            <div id="gate-form-error"></div>
+            <button id="gate-form-submit">提交登记</button>
+        </div>
+    </div>
+
+    <div id="quiz-overlay">
+        <div id="quiz-panel">
+            <div id="quiz-progress"></div>
+            <div id="quiz-question"></div>
+            <div id="quiz-options"></div>
+            <div id="quiz-feedback"></div>
+        </div>
+    </div>
+
+    <div id="notification"></div>
+
+    <div id="levelup-overlay">
+        <div id="levelup-text">LEVEL UP!</div>
+        <div id="levelup-detail"></div>
+    </div>
+
+    <div id="ending-overlay">
+        <div id="ending-panel">
+            <h1>恭喜完成</h1>
+            <h2>同济外语楼试炼！</h2>
+            <div class="ending-divider">————————————</div>
+            <div id="ending-stats"></div>
+            <div id="ending-title-final"></div>
+            <button id="restart-btn">重新开始游戏</button>
+        </div>
+    </div>
+</div>
+<script src="game.js"></script>
+</body>
+</html>
